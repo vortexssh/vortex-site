@@ -1,0 +1,11 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        VITE_CONSOLE_URL: ${VITE_CONSOLE_URL:-https://my.vortex.timant32.ru}
+    image: vortex-site:latest
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:18081:80"
