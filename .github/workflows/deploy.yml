@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+  workflow_dispatch:
 
 jobs:
   deploy:
@@ -18,9 +19,13 @@ jobs:
           key: ${{ secrets.SERVER_SSH_KEY }}
           script: |
             set -e
+            if [ ! -d /opt/vortex-site/.git ]; then
+              src=$(git -C /opt/vortex-web remote get-url origin)
+              clone_url=${src/vortex-web/vortex-site}
+              git clone "$clone_url" /opt/vortex-site
+            fi
             cd /opt/vortex-site
             git fetch origin master
             git reset --hard origin/master
-            docker builder prune -f || true
-            docker image prune -f || true
+            docker rm -f vortex-site-web-1 2>/dev/null || true
             docker compose up -d --build
