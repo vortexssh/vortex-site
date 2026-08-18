@@ -40,7 +40,7 @@ export function Architecture() {
           {t.arch.title}
         </h2>
         <div className="mt-6 flex flex-wrap gap-2">
-          {['FastAPI', 'Go agent', 'PostgreSQL', 'Redis', 'WebSocket', 'JWT + TOTP'].map((s) => (
+          {t.arch.stack.map((s) => (
             <span
               key={s}
               className="rounded-md border border-border bg-void px-2.5 py-1 font-mono text-[11px] text-dim"
