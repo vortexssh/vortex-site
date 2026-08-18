@@ -1,0 +1,17 @@
+---
+description: VortexSSH zero-trust and 2FA facts that landing copy must not contradict.
+globs: src/copy.ts,src/**/*.tsx,AGENTS.md,docs/**/*.md
+alwaysApply: false
+---
+
+# Copy must stay true
+
+Zero-trust: Core never stores target SSH passwords or private keys. Metadata only.
+
+2FA: WebSSH, proxy, telemetry, tasks, agent create/rotate require `is_2fa_enabled`.
+
+Agent: outbound WSS only; no inbound listen. Telemetry lives in Redis with TTL, not PostgreSQL.
+
+Prefixes: `vxk_` API keys, `vxa_` agent secrets (shown once), `vxp_` plugin tokens.
+
+If a requested slogan implies cloud-held keys, rewrite it. Update RU and EN together in `src/copy.ts`.

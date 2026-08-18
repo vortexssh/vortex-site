@@ -1,0 +1,12 @@
+---
+description: Landing visual language matching Vortex Web matrix theme.
+globs: src/**/*.{tsx,css}
+alwaysApply: false
+---
+
+# Visual language
+
+- Background: `#0a0a0a` (`void`). Accent: `#39ff14` (`neon`).
+- Fonts: Inter (UI), JetBrains Mono (kicker, terminal, labels).
+- Thin borders, small glow on CTAs. No purple SaaS gradients, no emoji-heavy marketing.
+- Keep the fake terminal and fleet widget; they explain the product faster than extra paragraphs.

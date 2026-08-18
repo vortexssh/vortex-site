@@ -1,0 +1,18 @@
+---
+description: Production domains and ports for Vortex landing vs console.
+globs: deploy/**,Dockerfile,docker-compose.yml,DEPLOY.md,.github/workflows/**
+alwaysApply: false
+---
+
+# Deploy topology
+
+| Host | Service | Port |
+|---|---|---|
+| `vortex.timant32.ru` | this SPA | `127.0.0.1:18081` |
+| `my.vortex.timant32.ru` | vortex-web console | `127.0.0.1:18080` |
+| `api.vortex.timant32.ru` | vortex-core | API + WSS |
+| `vortex.timant32.ru/agent/` | host static binaries | `/opt/vortex-web/agent-bins/` |
+
+Until cutover, production console is still the apex. Do not point apex nginx at `:18081` yet.
+
+VPS paths: `/opt/vortex-site`, `/opt/vortex-web`, `/opt/vortex-core`. SSH host alias: `timant32`.

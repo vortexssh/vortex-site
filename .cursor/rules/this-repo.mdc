@@ -1,0 +1,14 @@
+---
+description: Vortex Site is a public landing page, not Core/Web/Agent. Always load ecosystem context.
+alwaysApply: true
+---
+
+# Vortex Site — scope
+
+You are in **vortex-site**, the public landing for `https://vortex.timant32.ru`.
+
+- Do not add auth, API clients, WebSockets, SSH password fields, or a dashboard here.
+- Console CTAs go to `VITE_CONSOLE_URL` (`https://my.vortex.timant32.ru`).
+- Product facts: `docs/ECOSYSTEM.md`. Claims allowed on the page: `docs/COPY.md`.
+- Read `AGENTS.md` before large copy or architecture changes.
+- Do not deploy this container onto apex until `vortex-web` has moved to `my.vortex.timant32.ru`.
